@@ -20,4 +20,5 @@
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
 # sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall-packages.git' feeds.conf.default
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
 git clone -b master --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
