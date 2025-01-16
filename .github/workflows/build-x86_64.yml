@@ -141,6 +141,16 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: cache
+      uses: stupidloud/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        #mixkey: ${{ env.TARGET_DEVICE_ARCH }}
+        mixkey: ${{ env.MIXKEY }}
+        toolchain: 'true'
+        clean: ${{github.event.inputs.clean}}
+        prefix: ${{ github.workspace }}/openwrt
+
     - name: Compile the firmware
       id: compile
       run: |
